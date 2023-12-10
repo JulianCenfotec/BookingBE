@@ -1,17 +1,34 @@
-const data = {
-  resType: 1,
-  resBody: 'someText',
-  resUser: 'onlineTestCommit',
-};
+import React, { useState } from 'react';
 
-fetch('https://booking-be.vercel.app/api/add-reservation', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(data),
-})
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error('Error:', error));
-console.log('test');
+export default function YourComponent() {
+  const [responseMessage, setResponseMessage] = useState();
+
+  const addReservation = async () => {
+    const data = {
+      resType: 1,
+      resBody: 'someText',
+      resUser: 'onlineTestCommit',
+    };
+
+    try {
+      const response = await fetch('/api/add-reservation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+
+    } catch (error) {
+      console.error('Error:', error.message);
+    }
+  };
+
+  return (
+    <div>
+      <button onClick={addReservation}>Add Reservation</button>
+      <p>{responseMessage}</p>
+    </div>
+  );
+}
