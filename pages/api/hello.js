@@ -1,11 +1,16 @@
-import { sql } from '@vercel/postgres';
- 
-export default async function handler(request, response) {
-  try {
-    const result =
-      await sql`CREATE TABLE reservations ( Type smallint, Body json, user Varchar(20) );`;
-    return response.status(200).json({ result });
-  } catch (error) {
-    return response.status(500).json({ error });
-  }
-}
+const data = {
+  resType: 1,
+  resBody: 'someText',
+  resUser: 'onlineTestCommit',
+};
+
+fetch('https://booking-be.vercel.app/api/add-reservation', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(data),
+})
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
