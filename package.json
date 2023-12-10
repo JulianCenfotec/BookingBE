@@ -6,8 +6,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@vercel/postgres": "^0.5.1",
     "date-fns": "^2.29.3",
+    "framer-motion": "^10.16.16",
     "gray-matter": "^4.0.3",
     "next": "latest",
     "react": "18.2.0",
