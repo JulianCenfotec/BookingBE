@@ -14,3 +14,4 @@ fetch('https://booking-be.vercel.app/api/add-reservation', {
   .then(response => response.json())
   .then(data => console.log(data))
   .catch(error => console.error('Error:', error));
+console.log('test');
