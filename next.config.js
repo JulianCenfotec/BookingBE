@@ -3,7 +3,7 @@ module.exports = {
   async headers() {
     return [
       {
-        source: '/api/:path*',
+        source: '/api/add-reservation',
         headers: [
           {
             key: 'Access-Control-Allow-Origin',
