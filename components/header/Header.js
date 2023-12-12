@@ -4,10 +4,12 @@ import FlightReservation from '../forms/FlightReservation';
 import { ChakraProvider } from '@chakra-ui/react';
 import RestaurantReservation from '../forms/RestaurantReservaion';
 import HotelReservation from '../forms/HotelReservation';
+import ListAll from '../forms/ListAllReservations';
 
 const Header = () => {
   return(
       <div>
+
       <ChakraProvider>
         <Tabs variant='soft-rounded' colorScheme='blue'>
           <TabList>
@@ -29,6 +31,9 @@ const Header = () => {
             </TabPanel>
             <TabPanel>
               <ActivityReservation/>
+            </TabPanel>
+             <TabPanel>
+              <ListAll/>
             </TabPanel>
           </TabPanels>
         </Tabs>
